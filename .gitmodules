@@ -1,0 +1,3 @@
+[submodule "GraphLab"]
+	path = GraphLab
+	url = https://gitlab.com/matf-bg-ac-rs/course-rs/projects-2024-2025/GraphLab.git
