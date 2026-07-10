@@ -1,0 +1,366 @@
+valgrind: valgrind-3.15.0
+cmake: cmake version 3.16.3
+c++: c++ (Ubuntu 10.5.0-1ubuntu1~20.04) 10.5.0
+Qt prefix: /home/kalu/programs/qt/6.8.0/gcc_64
+
+Configuring unit test build for Memcheck...
+-- The CXX compiler identification is GNU 10.5.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for C++ include pthread.h
+-- Looking for C++ include pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE  
+-- Check if linker can resolve circular dependencies - FALSE
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/valgrind/memcheck/build
+
+Building graphlab_unit_tests...
+Scanning dependencies of target graphlab_unit_tests_autogen
+[  5%] Automatic MOC for target graphlab_unit_tests
+[  5%] Built target graphlab_unit_tests_autogen
+Scanning dependencies of target graphlab_unit_tests
+[ 11%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/graphlab_unit_tests_autogen/mocs_compilation.cpp.o
+[ 17%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/tests/test_main.cpp.o
+[ 23%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/tests/graph_unit_tests.cpp.o
+[ 29%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/tests/serialization_unit_tests.cpp.o
+[ 35%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/tests/algorithm_unit_tests.cpp.o
+[ 41%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/graph/graph.cpp.o
+[ 47%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/Serialization/Serializer.cpp.o
+[ 52%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/BFS/bfs.cpp.o
+[ 58%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/DFS/dfs.cpp.o
+[ 64%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/Dijkstra/dijkstra.cpp.o
+[ 70%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/Astar/astar.cpp.o
+[ 76%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/Floyd_Warshall/floyd_warshall.cpp.o
+[ 82%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/MST_Prim/mst_prim.cpp.o
+[ 88%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/MST_Kruskal/mst_kruskal.cpp.o
+[ 94%] Building CXX object CMakeFiles/graphlab_unit_tests.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/Euler/euler.cpp.o
+[100%] Linking CXX executable graphlab_unit_tests
+[100%] Built target graphlab_unit_tests
+
+Running Valgrind Memcheck...
+==19273== Memcheck, a memory error detector
+==19273== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==19273== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==19273== Command: /home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/valgrind/memcheck/build/graphlab_unit_tests -txt
+==19273== 
+********* Start testing of GraphLabUnitTests *********
+Config: Using QtTest library 6.8.0, Qt 6.8.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 10.3.1 20210422 (Red Hat 10.3.1-1)), ubuntu 20.04
+PASS   : GraphLabUnitTests::initTestCase()
+PASS   : GraphLabUnitTests::unweightedUndirectedGraphStoresNodesAndSymmetricEdges()
+PASS   : GraphLabUnitTests::weightedDirectedGraphStoresEdgeDirectionAndWeight()
+PASS   : GraphLabUnitTests::removingUndirectedNodeRemovesIncidentEdges()
+PASS   : GraphLabUnitTests::graphMetadataCanBeChangedAfterInsertion()
+PASS   : GraphLabUnitTests::graphsReportAbsenceOfNegativeWeights()
+PASS   : GraphLabUnitTests::neighboursAreReturnedFromAdjacencyList()
+PASS   : GraphLabUnitTests::removingEdgesUpdatesGraphStorageForEachGraphType()
+PASS   : GraphLabUnitTests::nodesAndEdgesCanBeConvertedToAndFromQVariant()
+PASS   : GraphLabUnitTests::graphVariantContainsAdjacencyEdgeEntries()
+PASS   : GraphLabUnitTests::negativeCycleDetectionDistinguishesCyclicAndAcyclicGraphs()
+PASS   : GraphLabUnitTests::bfsAndDfsVisitReachableEdgesFromSelectedStartNode()
+PASS   : GraphLabUnitTests::dijkstraReturnsShortestPathAndRejectsNegativeWeights()
+PASS   : GraphLabUnitTests::astarFindsExpectedPathOnSimpleWeightedGraph()
+PASS   : GraphLabUnitTests::astarSupportsAllHeuristicModesAndReportsMissingPaths()
+PASS   : GraphLabUnitTests::floydWarshallComputesAllPairsShortestDistances()
+PASS   : GraphLabUnitTests::floydWarshallHandlesUndirectedGraphsAndNegativeCycleCheck()
+PASS   : GraphLabUnitTests::primAndKruskalReturnSameMinimumSpanningTreeWeight()
+PASS   : GraphLabUnitTests::eulerDetectsAndReturnsPathForSemiEulerianUndirectedGraphs()
+PASS   : GraphLabUnitTests::eulerHandlesCircuitDirectedAndEmptyGraphs()
+PASS   : GraphLabUnitTests::serializerSavesAndLoadsGraphStructureAndGraphTypeFlags()
+PASS   : GraphLabUnitTests::graphCanBeRoundTrippedThroughQVariant()
+PASS   : GraphLabUnitTests::serializerIgnoresMissingFiles()
+PASS   : GraphLabUnitTests::algorithmIterationsCanMoveForwardBackwardAndReset()
+PASS   : GraphLabUnitTests::basicGraphTraversalChecksAlwaysPass()
+PASS   : GraphLabUnitTests::cleanupTestCase()
+Totals: 26 passed, 0 failed, 0 skipped, 0 blacklisted, 1165ms
+********* Finished testing of GraphLabUnitTests *********
+==19273== 
+==19273== HEAP SUMMARY:
+==19273==     in use at exit: 19,212 bytes in 19 blocks
+==19273==   total heap usage: 1,996 allocs, 1,977 frees, 371,437 bytes allocated
+==19273== 
+==19273== 4 bytes in 1 blocks are still reachable in loss record 1 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A576F3: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A57D13: g_private_get (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A28460: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F72E1: g_hash_table_new_full (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A1A7C2: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4011B99: call_init.part.0 (dl-init.c:72)
+==19273==    by 0x4011CA0: call_init (dl-init.c:30)
+==19273==    by 0x4011CA0: _dl_init (dl-init.c:119)
+==19273==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==19273==    by 0x1: ???
+==19273==    by 0x1FFEFFFC32: ???
+==19273==    by 0x1FFEFFFC94: ???
+==19273== 
+==19273== 4 bytes in 1 blocks are still reachable in loss record 2 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A576F3: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A57D13: g_private_get (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A34053: g_thread_self (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A093DF: g_main_context_acquire (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A094B2: g_main_context_push_thread_default (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13ABC: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A450DB: QCoreApplication::QCoreApplication(int&, char**, int) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273== 
+==19273== 4 bytes in 1 blocks are still reachable in loss record 3 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A576F3: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A57D13: g_private_get (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A0950D: g_main_context_push_thread_default (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13ABC: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A450DB: QCoreApplication::QCoreApplication(int&, char**, int) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x10F771: main (test_main.cpp:5)
+==19273== 
+==19273== 8 bytes in 1 blocks are still reachable in loss record 4 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FE98: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A28485: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A5380D: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A07089: g_main_context_new (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A07184: g_main_context_default (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13C84: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A450DB: QCoreApplication::QCoreApplication(int&, char**, int) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273== 
+==19273== 16 bytes in 1 blocks are still reachable in loss record 5 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FE98: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A28485: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A29B07: g_slist_append (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A070C4: g_main_context_new (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A07184: g_main_context_default (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13C84: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A450DB: QCoreApplication::QCoreApplication(int&, char**, int) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273== 
+==19273== 24 bytes in 1 blocks are still reachable in loss record 6 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FE98: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A28485: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A28AAD: g_slice_alloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A09534: g_main_context_push_thread_default (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13ABC: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A450DB: QCoreApplication::QCoreApplication(int&, char**, int) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x10F771: main (test_main.cpp:5)
+==19273== 
+==19273== 32 bytes in 1 blocks are still reachable in loss record 7 of 19
+==19273==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FEF0: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F602F: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F7320: g_hash_table_new_full (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A1A7C2: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4011B99: call_init.part.0 (dl-init.c:72)
+==19273==    by 0x4011CA0: call_init (dl-init.c:30)
+==19273==    by 0x4011CA0: _dl_init (dl-init.c:119)
+==19273==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==19273==    by 0x1: ???
+==19273==    by 0x1FFEFFFC32: ???
+==19273==    by 0x1FFEFFFC94: ???
+==19273== 
+==19273== 32 bytes in 1 blocks are still reachable in loss record 8 of 19
+==19273==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FEF0: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F602F: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F7320: g_hash_table_new_full (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A0701B: g_main_context_new (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A07184: g_main_context_default (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13C84: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A450DB: QCoreApplication::QCoreApplication(int&, char**, int) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273== 
+==19273== 32 bytes in 1 blocks are still reachable in loss record 9 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FE98: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A28485: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79D94E6: g_ptr_array_sized_new (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A07073: g_main_context_new (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A07184: g_main_context_default (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13C84: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A450DB: QCoreApplication::QCoreApplication(int&, char**, int) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273== 
+==19273== 32 bytes in 1 blocks are still reachable in loss record 10 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FE98: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A28485: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A05FE6: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A070A9: g_main_context_new (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A07184: g_main_context_default (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13C84: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A450DB: QCoreApplication::QCoreApplication(int&, char**, int) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273== 
+==19273== 48 bytes in 1 blocks are still reachable in loss record 11 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FE98: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A28485: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A28AAD: g_slice_alloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A34069: g_thread_self (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A093DF: g_main_context_acquire (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A094B2: g_main_context_push_thread_default (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13ABC: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273== 
+==19273== 64 bytes in 1 blocks are still reachable in loss record 12 of 19
+==19273==    at 0x483B723: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x483E017: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FF3F: g_realloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F601A: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F7320: g_hash_table_new_full (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A1A7C2: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4011B99: call_init.part.0 (dl-init.c:72)
+==19273==    by 0x4011CA0: call_init (dl-init.c:30)
+==19273==    by 0x4011CA0: _dl_init (dl-init.c:119)
+==19273==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==19273==    by 0x1: ???
+==19273==    by 0x1FFEFFFC32: ???
+==19273==    by 0x1FFEFFFC94: ???
+==19273== 
+==19273== 64 bytes in 1 blocks are still reachable in loss record 13 of 19
+==19273==    at 0x483B723: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x483E017: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FF3F: g_realloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F601A: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F7320: g_hash_table_new_full (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A0701B: g_main_context_new (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A07184: g_main_context_default (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13C84: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273== 
+==19273== 64 bytes in 1 blocks are still reachable in loss record 14 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FE98: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F6C34: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F70A5: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A08632: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A08771: g_source_attach (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13B15: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A450DB: QCoreApplication::QCoreApplication(int&, char**, int) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273== 
+==19273== 96 bytes in 1 blocks are still reachable in loss record 15 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FE98: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A28485: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F72E1: g_hash_table_new_full (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A1A7C2: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4011B99: call_init.part.0 (dl-init.c:72)
+==19273==    by 0x4011CA0: call_init (dl-init.c:30)
+==19273==    by 0x4011CA0: _dl_init (dl-init.c:119)
+==19273==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==19273==    by 0x1: ???
+==19273==    by 0x1FFEFFFC32: ???
+==19273==    by 0x1FFEFFFC94: ???
+==19273== 
+==19273== 96 bytes in 1 blocks are still reachable in loss record 16 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FE98: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A28485: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F72E1: g_hash_table_new_full (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A0701B: g_main_context_new (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A07184: g_main_context_default (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13C84: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A450DB: QCoreApplication::QCoreApplication(int&, char**, int) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273== 
+==19273== 176 bytes in 1 blocks are still reachable in loss record 17 of 19
+==19273==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FEF0: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A06FF5: g_main_context_new (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A07184: g_main_context_default (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4D13C84: QEventDispatcherGlibPrivate::QEventDispatcherGlibPrivate(_GMainContext*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4D13D24: QEventDispatcherGlib::QEventDispatcherGlib(QObject*) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4BE988E: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4B4CC7C: ??? (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A44A1F: QCoreApplicationPrivate::init() (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x4A450DB: QCoreApplication::QCoreApplication(int&, char**, int) (in /home/kalu/programs/qt/6.8.0/gcc_64/lib/libQt6Core.so.6.8.0)
+==19273==    by 0x10F771: main (test_main.cpp:5)
+==19273== 
+==19273== 2,032 bytes in 1 blocks are still reachable in loss record 18 of 19
+==19273==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FEF0: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A33B75: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A286D2: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x79F72E1: g_hash_table_new_full (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A1A7C2: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4011B99: call_init.part.0 (dl-init.c:72)
+==19273==    by 0x4011CA0: call_init (dl-init.c:30)
+==19273==    by 0x4011CA0: _dl_init (dl-init.c:119)
+==19273==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==19273==    by 0x1: ???
+==19273==    by 0x1FFEFFFC32: ???
+==19273==    by 0x1FFEFFFC94: ???
+==19273== 
+==19273== 16,384 bytes in 1 blocks are still reachable in loss record 19 of 19
+==19273==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19273==    by 0x7A0FE98: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x7A1A7D3: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.6)
+==19273==    by 0x4011B99: call_init.part.0 (dl-init.c:72)
+==19273==    by 0x4011CA0: call_init (dl-init.c:30)
+==19273==    by 0x4011CA0: _dl_init (dl-init.c:119)
+==19273==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==19273==    by 0x1: ???
+==19273==    by 0x1FFEFFFC32: ???
+==19273==    by 0x1FFEFFFC94: ???
+==19273== 
+==19273== LEAK SUMMARY:
+==19273==    definitely lost: 0 bytes in 0 blocks
+==19273==    indirectly lost: 0 bytes in 0 blocks
+==19273==      possibly lost: 0 bytes in 0 blocks
+==19273==    still reachable: 19,212 bytes in 19 blocks
+==19273==         suppressed: 0 bytes in 0 blocks
+==19273== 
+==19273== For lists of detected and suppressed errors, rerun with: -s
+==19273== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
