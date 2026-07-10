@@ -1,0 +1,7 @@
+Test project /home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/unit_tests/build
+    Start 1: graphlab_unit_tests
+1/1 Test #1: graphlab_unit_tests ..............   Passed    0.04 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.04 sec

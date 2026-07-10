@@ -1,0 +1,24 @@
+Reading data file /home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/unit_tests/coverage/lcov.info
+Found 15 entries.
+Found common filename prefix "/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src"
+Writing .css and .png files.
+Generating output.
+Processing file Serialization/Serializable.hpp
+Processing file Serialization/Serializer.cpp
+Processing file algorithm/algorithmrunnable.hpp
+Processing file algorithm/Astar/astar.cpp
+Processing file algorithm/BFS/bfs.cpp
+Processing file algorithm/DFS/dfs.cpp
+Processing file algorithm/Dijkstra/dijkstra.cpp
+Processing file algorithm/Euler/euler.cpp
+Processing file algorithm/Floyd_Warshall/floyd_warshall.cpp
+Processing file algorithm/MST_Kruskal/mst_kruskal.cpp
+Processing file algorithm/MST_Prim/mst_prim.cpp
+Processing file graph/node.hpp
+Processing file graph/edge.hpp
+Processing file graph/graph.hpp
+Processing file graph/graph.cpp
+Writing directory view page.
+Overall coverage rate:
+  lines......: 93.6% (641 of 685 lines)
+  functions..: 85.8% (103 of 120 functions)

@@ -23,6 +23,8 @@ venv/
 
 # Generic build outputs
 build/
+unit_tests/build/
+unit_tests/Testing/
 cmake-build-*/
 CMakeFiles/
 CMakeCache.txt
@@ -49,4 +51,3 @@ cachegrind.out.*
 massif.out.*
 perf.data
 perf.data.old
-

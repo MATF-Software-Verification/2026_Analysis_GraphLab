@@ -1,0 +1,21 @@
+Capturing coverage data from /home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/unit_tests/build
+Found gcov version: 10.5.0
+Using intermediate gcov format
+Scanning /home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/unit_tests/build for .gcda files ...
+Found 15 data files in /home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/unit_tests/build
+Processing tests/algorithm_unit_tests.cpp.gcda
+Processing tests/test_main.cpp.gcda
+Processing tests/graph_unit_tests.cpp.gcda
+Processing tests/serialization_unit_tests.cpp.gcda
+Processing home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/Dijkstra/dijkstra.cpp.gcda
+Processing home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/Floyd_Warshall/floyd_warshall.cpp.gcda
+Processing home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/MST_Kruskal/mst_kruskal.cpp.gcda
+Processing home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/MST_Prim/mst_prim.cpp.gcda
+Processing home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/Astar/astar.cpp.gcda
+Processing home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/BFS/bfs.cpp.gcda
+Processing home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/DFS/dfs.cpp.gcda
+Processing home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/Euler/euler.cpp.gcda
+Processing home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/Serialization/Serializer.cpp.gcda
+Processing home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/graph/graph.cpp.gcda
+Processing graphlab_unit_tests_autogen/mocs_compilation.cpp.gcda
+Finished .info-file creation

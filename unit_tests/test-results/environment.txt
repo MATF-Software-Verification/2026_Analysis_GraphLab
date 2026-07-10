@@ -1,0 +1,5 @@
+cmake: cmake version 3.16.3
+c++: c++ (Ubuntu 10.5.0-1ubuntu1~20.04) 10.5.0
+ctest: ctest version 3.16.3
+lcov: lcov: LCOV version 1.14
+Qt prefix: /home/kalu/programs/qt/6.8.0/gcc_64
