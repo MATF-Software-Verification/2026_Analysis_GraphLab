@@ -1,0 +1,5 @@
+Cppcheck exit status: 0
+Reported findings: 2
+
+GraphLab/src/UI/GraphEditor/Scene/drawingedge.cpp:40:14: warning: Member variable 'DrawingEdge::mutex' is not initialized in the constructor. [uninitMemberVar]
+GraphLab/src/UI/GraphEditor/Scene/drawingscene.cpp:83:17: warning: Assignment of function parameter has no effect outside the function. Did you forget dereferencing it? [uselessAssignmentPtrArg]
