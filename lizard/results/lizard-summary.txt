@@ -1,0 +1,25 @@
+lizard: 1.21.2
+Lizard exit status: 1
+Threshold warnings: 12
+Thresholds: CCN > 10, NLOC > 50, parameters > 5
+
+!!!! Warnings (nloc > 50 or cyclomatic_complexity > 10 or length > 1000 or parameter_count > 5) !!!!
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+      57      1    786      1      68 MainWindow::MainWindow@24-91@GraphLab/src/mainwindow.cpp
+      53     11    313      1      61 MainWindow::closeEvent@98-158@GraphLab/src/mainwindow.cpp
+      87     15    886      6     119 Helpers::obtainFloydWarshallIterationAndDisplayEffect@21-139@GraphLab/src/utils/helpers.cpp
+      60      9    337      1      72 HelpAlgorithm::showHelpForAlgorithm@4-75@GraphLab/src/utils/helpalgorithm.cpp
+      54     21    669      1      69 algorithm::FloydWarshall::run@13-81@GraphLab/src/algorithm/Floyd_Warshall/floyd_warshall.cpp
+      47     11    405      1      59 algorithm::MST_Prim::run@16-74@GraphLab/src/algorithm/MST_Prim/mst_prim.cpp
+      85      9    430      1     109 AlgorithmWidget::onAlgorithmChanged@164-272@GraphLab/src/UI/GraphEditor/Menu/Algorithm/algorthmwidget.cpp
+      86     20    656      1     114 AlgorithmWidget::simulateIteration@360-473@GraphLab/src/UI/GraphEditor/Menu/Algorithm/algorthmwidget.cpp
+      79      2   1021      1      97 GraphEditor::GraphEditor@21-117@GraphLab/src/UI/GraphEditor/grapheditor.cpp
+      43      2    467      7      52 DrawingNode::DrawingNode@8-59@GraphLab/src/UI/GraphEditor/Scene/drawingnode.cpp
+      37     11    307      0      49 graph::Graph::contains_negative_cucles@135-183@GraphLab/src/graph/graph.cpp
+     176     30   1337      0     252 RunThread::run@8-259@GraphLab/src/Synchronization/runthread.cpp
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+      4583      13.5     2.6      106.5      259           12      0.05    0.25
