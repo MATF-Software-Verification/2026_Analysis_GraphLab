@@ -1,0 +1,6 @@
+perf: perf version 5.15.178
+cmake: cmake version 3.16.3
+c++: c++ (Ubuntu 10.5.0-1ubuntu1~20.04) 10.5.0
+Qt prefix: /home/kalu/programs/qt/6.8.0/gcc_64
+virtualization: vmware
+perf_event_paranoid: 0

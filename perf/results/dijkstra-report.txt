@@ -1,0 +1,40 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 554  of event 'cpu-clock:u'
+# Event count (approx.): 2783919250
+#
+# Overhead  Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Shared Object            IPC   [IPC Coverage]
+# ........  ........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................  .......................  ....................
+#
+    55.05%  [.] std::__detail::_Map_base<unsigned int, std::pair<unsigned int const, graph::Edge>, std::allocator<std::pair<unsigned int const, graph::Edge> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::at                                                                                                                                                                                                                                                                                                         graphlab_perf_benchmark  -      -            
+            |          
+            |--54.51%--algorithm::Dijkstra::run
+            |          main
+            |          __libc_start_main
+            |          
+             --0.54%--main
+                       __libc_start_main
+
+    37.36%  [.] algorithm::Dijkstra::reconstruct_path                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 graphlab_perf_benchmark  -      -            
+            |
+            ---algorithm::Dijkstra::run
+               main
+               __libc_start_main
+
+     2.89%  [.] _int_malloc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           libc-2.31.so             -      -            
+     1.26%  [.] std::__detail::_Map_base<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[]                                                                                                                                                                                                                                                                                               graphlab_perf_benchmark  -      -            
+            |          
+             --0.90%--algorithm::Dijkstra::reconstruct_path
+                       algorithm::Dijkstra::run
+                       main
+                       __libc_start_main
+
+     0.54%  [.] _int_free                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             libc-2.31.so             -      -            
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

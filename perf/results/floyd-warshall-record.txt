@@ -1,0 +1,7 @@
+workload=floyd-warshall
+nodes=600
+repetitions=3
+checksum=543
+elapsed_seconds=1.17371
+[ perf record: Woken up 1 times to write data ]
+[ perf record: Captured and wrote 0.019 MB /home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/perf/build/floyd-warshall.perf.data (217 samples) ]

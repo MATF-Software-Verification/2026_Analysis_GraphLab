@@ -1,0 +1,7 @@
+workload=dijkstra
+nodes=12000
+repetitions=5
+checksum=17435
+elapsed_seconds=2.84293
+[ perf record: Woken up 1 times to write data ]
+[ perf record: Captured and wrote 0.049 MB /home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/perf/build/dijkstra.perf.data (554 samples) ]

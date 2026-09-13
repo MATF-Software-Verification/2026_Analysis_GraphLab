@@ -1,0 +1,27 @@
+workload=dijkstra
+nodes=12000
+repetitions=5
+checksum=17435
+elapsed_seconds=2.76593
+workload=dijkstra
+nodes=12000
+repetitions=5
+checksum=17435
+elapsed_seconds=2.97893
+workload=dijkstra
+nodes=12000
+repetitions=5
+checksum=17435
+elapsed_seconds=2.62908
+
+ Performance counter stats for '/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/perf/build/graphlab_perf_benchmark dijkstra 12000 5' (3 runs):
+
+          2,642.34 msec task-clock                #    0.940 CPUs utilized            ( +-  3.33% )
+          2,642.33 msec cpu-clock:u               #    0.940 CPUs utilized            ( +-  3.33% )
+     7,641,854,727      cycles                    #    2.749 GHz                      ( +-  3.26% )
+                23      context-switches          #    8.273 /sec                     ( +- 88.19% )
+                 2      cpu-migrations            #    0.719 /sec                     ( +-125.83% )
+             5,032      page-faults               #    1.810 K/sec                    ( +-  0.03% )
+
+             2.811 +- 0.101 seconds time elapsed  ( +-  3.58% )
+

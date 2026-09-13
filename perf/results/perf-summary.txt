@@ -1,0 +1,23 @@
+Workloads profiled: 2
+Dijkstra: 12,000 nodes, 5 repetitions
+Floyd-Warshall: 600 nodes, 3 repetitions
+perf stat repetitions per workload: 3
+perf stat events: task-clock, cpu-clock:u, cycles, context-switches, cpu-migrations, page-faults
+Sampling event: cpu-clock:u
+Sampling frequency: 199 Hz
+
+Average measurements:
+  Dijkstra elapsed: 2.811 s
+  Dijkstra task clock: 2,642.34 ms
+  Dijkstra cycles: 7,641,854,727
+  Dijkstra page faults: 5,032
+  Floyd-Warshall elapsed: 1.10580 s
+  Floyd-Warshall task clock: 1,103.69 ms
+  Floyd-Warshall cycles: 3,188,566,971
+  Floyd-Warshall page faults: 23,280
+
+Detailed results:
+  perf/results/dijkstra-stat.txt
+  perf/results/dijkstra-report.txt
+  perf/results/floyd-warshall-stat.txt
+  perf/results/floyd-warshall-report.txt

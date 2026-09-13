@@ -1,0 +1,11 @@
+Scanning dependencies of target graphlab_perf_benchmark_autogen
+[ 14%] Automatic MOC for target graphlab_perf_benchmark
+[ 14%] Built target graphlab_perf_benchmark_autogen
+Scanning dependencies of target graphlab_perf_benchmark
+[ 28%] Building CXX object CMakeFiles/graphlab_perf_benchmark.dir/graphlab_perf_benchmark_autogen/mocs_compilation.cpp.o
+[ 42%] Building CXX object CMakeFiles/graphlab_perf_benchmark.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/graph/graph.cpp.o
+[ 57%] Building CXX object CMakeFiles/graphlab_perf_benchmark.dir/benchmark.cpp.o
+[ 71%] Building CXX object CMakeFiles/graphlab_perf_benchmark.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/Floyd_Warshall/floyd_warshall.cpp.o
+[ 85%] Building CXX object CMakeFiles/graphlab_perf_benchmark.dir/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/GraphLab/src/algorithm/Dijkstra/dijkstra.cpp.o
+[100%] Linking CXX executable graphlab_perf_benchmark
+[100%] Built target graphlab_perf_benchmark

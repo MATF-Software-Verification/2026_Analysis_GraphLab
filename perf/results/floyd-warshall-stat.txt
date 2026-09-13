@@ -1,0 +1,27 @@
+workload=floyd-warshall
+nodes=600
+repetitions=3
+checksum=543
+elapsed_seconds=1.0834
+workload=floyd-warshall
+nodes=600
+repetitions=3
+checksum=543
+elapsed_seconds=1.09073
+workload=floyd-warshall
+nodes=600
+repetitions=3
+checksum=543
+elapsed_seconds=1.09863
+
+ Performance counter stats for '/home/kalu/Desktop/VS/projekat/2026_Analysis_GraphLab/perf/build/graphlab_perf_benchmark floyd-warshall 600 3' (3 runs):
+
+          1,103.69 msec task-clock                #    0.998 CPUs utilized            ( +-  0.34% )
+          1,103.68 msec cpu-clock:u               #    0.998 CPUs utilized            ( +-  0.34% )
+     3,188,566,971      cycles                    #    2.905 GHz                      ( +-  0.32% )
+                21      context-switches          #   19.135 /sec                     ( +- 13.84% )
+                 2      cpu-migrations            #    1.822 /sec                     ( +- 28.87% )
+            23,280      page-faults               #   21.213 K/sec                  
+
+           1.10580 +- 0.00463 seconds time elapsed  ( +-  0.42% )
+
