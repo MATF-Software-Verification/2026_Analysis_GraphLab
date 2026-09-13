@@ -1,38 +1,42 @@
 # Valgrind Memcheck
 
-Ovaj direktorijum sadrži rezultate pokretanja Valgrind Memcheck alata nad QtTest unit test executable-om `graphlab_unit_tests`.
+This directory contains the results of running Valgrind Memcheck on the QtTest
+unit test executable `graphlab_unit_tests`.
 
-## Pokretanje
+## Running the Analysis
 
 ```bash
 cd valgrind/memcheck
 ./run_memcheck.sh
 ```
 
-Skripta podrazumeva Qt 6.8.0 na putanji `/home/kalu/programs/qt/6.8.0/gcc_64`. Ako je Qt instaliran drugde:
+The script expects Qt 6.8.0 at
+`/home/kalu/programs/qt/6.8.0/gcc_64` by default. If Qt is installed elsewhere:
 
 ```bash
-QT_PREFIX=/putanja/do/Qt/6.x/gcc_64 ./run_memcheck.sh
+QT_PREFIX=/path/to/Qt/6.x/gcc_64 ./run_memcheck.sh
 ```
 
-## Šta skripta radi
+## Script Behavior
 
-Skripta:
+The script:
 
-- konfiguriše poseban Debug build unit testova bez coverage instrumentacije;
-- prevodi `graphlab_unit_tests`;
-- pokreće executable pod Valgrind Memcheck alatom;
-- čuva pun izlaz u `memcheck-unit-tests.txt`;
-- izdvaja kratak pregled u `memcheck-summary.txt`.
+- configures a separate Debug build of the unit tests without coverage
+  instrumentation;
+- builds `graphlab_unit_tests`;
+- runs the executable under Valgrind Memcheck;
+- stores the complete output in `memcheck-unit-tests.txt`;
+- extracts a concise result into `memcheck-summary.txt`.
 
-Analizom su obuhvaceni model grafa, algoritmi i serijalizacija koji se izvršavaju kroz unit testove. GUI deo aplikacije nije obuhvaćen ovim Memcheck pokretanjem.
+The analysis covers the graph model, algorithms, and serialization code executed
+by the unit tests. The GUI is not covered by this Memcheck run.
 
-## Rezultati
+## Results
 
-- `memcheck-unit-tests.txt`: pun izlaz build-a, QtTest-a i Valgrind Memcheck-a.
-- `memcheck-summary.txt`: kratak pregled Valgrind rezultata.
+- `memcheck-unit-tests.txt`: complete build, QtTest, and Memcheck output.
+- `memcheck-summary.txt`: concise Memcheck result.
 
-Dobijeni rezultat:
+The latest committed result is:
 
 ```text
 26 passed, 0 failed
@@ -42,4 +46,6 @@ possibly lost: 0 bytes in 0 blocks
 ERROR SUMMARY: 0 errors from 0 contexts
 ```
 
-Memcheck prijavljuje `still reachable` memoriju iz Qt/GLib runtime-a. To nije klasifikovano kao memory leak (`definitely lost`, `indirectly lost` i `possibly lost` su 0).
+Memcheck reports `still reachable` memory from the Qt/GLib runtime. It is not
+classified as a memory leak: `definitely lost`, `indirectly lost`, and
+`possibly lost` are all zero.

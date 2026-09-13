@@ -1,45 +1,51 @@
 # Unit Tests
 
-Ovaj direktorijum sadrži QtTest unit testove za izdvojenu logiku projekta GraphLab: model grafa, algoritme nad grafovima, generičku logiku iteracija algoritama i serijalizaciju `.graph` fajlova. Testovi se grade iz analysis repozitorijuma nad izvornim fajlovima iz `GraphLab/src`.
+This directory contains QtTest unit tests for the isolated GraphLab logic: the
+graph model, graph algorithms, generic algorithm iteration logic, and `.graph`
+file serialization. Tests are built from the analysis repository using source
+files from `GraphLab/src`.
 
-## Zavisnosti
+## Dependencies
 
-Za pokretanje su potrebni:
+The following dependencies are required:
 
 - Python 3
 - CMake
-- C++ kompajler sa podrškom za C++17
-- Qt 6 sa modulima `Core` i `Test`
+- a C++ compiler with C++17 support
+- Qt 6 with the `Core` and `Test` modules
 - `ctest`
-- `lcov` i `genhtml`
-- `gcov` ili `gcov-10`
+- `lcov` and `genhtml`
+- `gcov` or `gcov-10`
 
-Na Ubuntu sistemu, deo zavisnosti se može instalirati komandom:
+On Ubuntu, some of these dependencies can be installed with:
 
 ```bash
 sudo apt install cmake g++ lcov
 ```
 
-Qt se koristi iz lokalne Qt instalacije. Podrazumevana putanja je `/home/kalu/programs/qt/6.8.0/gcc_64`, a druga putanja se zadaje promenljivom `QT_PREFIX`.
+Qt is loaded from a local installation. The default path is
+`/home/kalu/programs/qt/6.8.0/gcc_64`. A different path can be provided through
+the `QT_PREFIX` environment variable.
 
-## Pokretanje
+## Running the Tests
 
 ```bash
 cd unit_tests
 ./run_tests.py
 ```
 
-Skripta podrazumeva Qt 6.8.0 na putanji `/home/kalu/programs/qt/6.8.0/gcc_64`. Ako je Qt instaliran drugde:
+If Qt is installed at a different location:
 
 ```bash
-QT_PREFIX=/putanja/do/Qt/6.x/gcc_64 ./run_tests.py
+QT_PREFIX=/path/to/Qt/6.x/gcc_64 ./run_tests.py
 ```
 
-## Rezultati
+## Results
 
-Skripta pokreće CMake konfiguraciju, prevodi testove, izvršava ih preko CTest/QtTest i generiše coverage pomoću `lcov`/`genhtml`.
+The script configures the CMake project, builds the tests, executes them through
+CTest and QtTest, and generates coverage using `lcov` and `genhtml`.
 
-Poslednji dobijeni rezultat:
+The latest committed result is:
 
 ```text
 26 passed, 0 failed
@@ -47,23 +53,26 @@ Line coverage: 93.6%
 Function coverage: 85.8%
 ```
 
-Testovi su podeljeni po oblastima:
+Tests are divided by area:
 
-- `tests/graph_unit_tests.cpp`: osnovne operacije nad grafom i QVariant konverzija.
-- `tests/algorithm_unit_tests.cpp`: algoritmi nad grafovima i iteracije algoritama.
-- `tests/serialization_unit_tests.cpp`: čuvanje, učitavanje i ponašanje pri nepostojećem fajlu.
+- `tests/graph_unit_tests.cpp`: core graph operations and QVariant conversion.
+- `tests/algorithm_unit_tests.cpp`: graph algorithms and algorithm iterations.
+- `tests/serialization_unit_tests.cpp`: saving, loading, and missing-file
+  behavior.
 
-Rezultati pokretanja nalaze se u:
+Generated results are stored in:
 
-- `test-results/`: izlazi konfiguracije, build-a i testova.
-- `test-results/qtest-output.txt`: QtTest rezultat.
-- `coverage/lcov.info`: filtrirani coverage rezultat.
-- `coverage/html/index.html`: HTML coverage izveštaj.
+- `test-results/`: configuration, build, and test logs.
+- `test-results/qtest-output.txt`: the QtTest result.
+- `coverage/lcov.info`: filtered coverage data.
+- `coverage/html/index.html`: the HTML coverage report.
 
-HTML coverage izveštaj se otvara u pregledaču:
+Open the HTML coverage report with:
 
 ```bash
 xdg-open coverage/html/index.html
 ```
 
-Coverage se odnosi na izdvojenu ne-GUI logiku iz `GraphLab/src/graph`, `GraphLab/src/algorithm` i `GraphLab/src/Serialization`. GUI fajlovi nisu uključeni u ovaj coverage izveštaj.
+Coverage applies to the isolated non-GUI logic in `GraphLab/src/graph`,
+`GraphLab/src/algorithm`, and `GraphLab/src/Serialization`. GUI files are not
+included in this coverage report.
