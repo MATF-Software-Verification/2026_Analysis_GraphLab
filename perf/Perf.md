@@ -62,17 +62,18 @@ reports are kept as analysis results.
 
 | Workload | Average elapsed time | Average task clock | Average cycles | Page faults |
 | --- | ---: | ---: | ---: | ---: |
-| Dijkstra | 2.382 s | 2,379.13 ms | 6,881,327,611 | 5,032 |
-| Floyd-Warshall | 1.107 s | 1,116.57 ms | 3,229,109,713 | 23,280 |
+| Dijkstra | 2.811 s | 2,642.34 ms | 7,641,854,727 | 5,032 |
+| Floyd-Warshall | 1.106 s | 1,103.69 ms | 3,188,566,971 | 23,280 |
 
 ### CPU Hotspots
 
 | Workload | Hotspot | Overhead | Assessment | Proposed action |
 | --- | --- | ---: | --- | --- |
-| Dijkstra | Edge lookup through `std::unordered_map::at` | 48.69% | The same edge data is read from the map many times. | Reuse edge data inside the loop. |
-| Dijkstra | `Dijkstra::reconstruct_path` | 44.47% | The full path is rebuilt for every saved step. | Save less data and rebuild the path only for display. |
-| Floyd-Warshall | `FloydWarshall::run` | 60.40% | Most time is spent in the expected matrix calculation. | No change needed. |
-| Floyd-Warshall | Memory allocation and nested-vector operations | 36.16% combined | The path matrix creates many vectors. Returning the result also copies the matrices. | Return the existing matrices without copying them and consider storing only the next edge. |
+| Dijkstra | Edge lookup through `std::unordered_map::at` | 55.05% | The same edge data is read from the map many times. | Reuse edge data inside the loop. |
+| Dijkstra | `Dijkstra::reconstruct_path` | 37.36% | The full path is rebuilt for every saved step. | Save less data and rebuild the path only for display. |
+| Floyd-Warshall | `FloydWarshall::run` | 56.68% | Most time is spent in the expected matrix calculation. | No change needed. |
+| Floyd-Warshall | `_int_malloc` | 16.13% | The path matrix creates many small vectors. | Consider storing only the next edge for each node pair. |
+| Floyd-Warshall | Nested-vector construction | 8.29% | Some of this work comes from copying the result matrices. | Return the existing matrices without copying them. |
 
 Saving full paths for Dijkstra visualization steps causes most of its measured
 cost. In Floyd-Warshall, `return std::make_pair(distances, paths)` copies both
