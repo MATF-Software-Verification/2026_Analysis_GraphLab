@@ -1,0 +1,7 @@
+clang-format: clang-format version 10.0.0-4ubuntu1 
+Style: Microsoft
+Files checked: 66
+Conforming files: 0
+Non-conforming files: 66
+Formatting diagnostics: 2603
+Source files modified: 0

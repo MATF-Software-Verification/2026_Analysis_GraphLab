@@ -1,0 +1,9 @@
+clang-format: clang-format version 10.0.0-4ubuntu1 
+STYLE        CHANGED FILES  DIAGNOSTICS
+LLVM         66             5728
+Google       66             5389
+Chromium     66             5599
+Mozilla      66             5750
+WebKit       64             2186
+Microsoft    66             2603
+GNU          66             8412
